@@ -1,0 +1,28 @@
+default:
+  image: node:18.16.1
+
+stages:
+  - build
+  - test
+
+install:
+  tags:
+    - dev
+    - main
+  stage: build
+  script:
+    - echo "Intalling modules"
+    - yarn install
+    - echo "Building application"
+    - yarn build
+
+lint:
+  tags:
+    - dev
+    - main
+  stage: test
+  script:
+    - echo "Intalling modules"
+    - yarn install
+    - echo "Linting of application"
+    - yarn lint
