@@ -1,0 +1,18 @@
+@import url("symbols.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    @font-face {
+        font-family: "3270";
+        src: url("font/Meslo/MesloLGSNerdFont-Regular.ttf") format("truetype");
+    }
+
+    html {
+        font-family: "3270";
+        background-color: #1f2335;
+        color: #ff9e64;
+    }
+}
