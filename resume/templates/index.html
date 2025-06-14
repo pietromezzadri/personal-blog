@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pietro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static "style/style.output.css" %}">
+    <link rel="icon" type"image/x-icon" href="{% static "images/cheese.ico" %}">
+    <script src="{% static "htmx.min.js" %}" defer></script>
+</head>
+<body>
+    <div class="ml-6 mt-4">
+        {% include "navbar.html" %}
+        {% include "about-me.html" %}
+        {% include "experience.html" %}
+	<!-- {% include "projects.html" %} -->
+        <!-- {% include "hobbies.html" %} -->
+    </div>
+</body>
+</html>
