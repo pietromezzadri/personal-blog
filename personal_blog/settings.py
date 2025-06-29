@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET", default=get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG_MODE")
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", default="127.0.0.1").split(",")
 
 
 # Application definition
@@ -121,9 +121,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = os.environ.get("STATIC_URL")
+STATIC_URL = os.environ.get("STATIC_URL", default="/static/")
 
-STATIC_ROOT = os.environ.get("STATIC_ROOT")
+STATIC_ROOT = os.environ.get("STATIC_ROOT", default="./static")
 
 
 # Default primary key field type
