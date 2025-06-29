@@ -1,0 +1,24 @@
+services:
+  web:
+    build: .
+    command: gunicorn --bind 0.0.0.0:8000 personal_blog.wsgi:application
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+
+    # Optional: Link to a database service
+    # depends_on:
+    #   - db
+    # environment:
+    #   - DATABASE_URL=postgres://user:password@db:5432/mydatabase
+
+  # Optional: Database service (e.g., PostgreSQL)
+  # db:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_DB: mydatabase
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: password
