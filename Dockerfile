@@ -20,6 +20,8 @@ COPY . /app/
 # Expose the port your Django application will run on
 EXPOSE 8000
 
+CMD ["python", "manage.py", "collecstatic"]
+
 # Command to run the Django development server (for development)
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
